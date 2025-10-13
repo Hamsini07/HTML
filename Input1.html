@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Getting Input</title>
+  <script>
+    function handleSubmit(event) {
+      event.preventDefault(); // stop form from reloading
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const address = document.getElementById("address").value.trim();
+      const country = document.getElementById("country").value;
+      const gender = document.querySelector('input[name="gender"]:checked');
+      const age = document.getElementById("age").value.trim();
+
+      if (!name || !email || !address || !country || !gender || !age) {
+        alert("Invalid input. Please try again.");
+        return;
+      }
+
+      const ageNum = parseInt(age);
+      const eligibility = ageNum >= 18 ? "Eligible to Vote" : "Not Eligible to Vote";
+
+      // Create table output
+      const tableHTML = `
+        <table border="1" cellpadding="8" cellspacing="0">
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Country</th>
+            <th>Gender</th>
+            <th>Age</th>
+            <th>Eligibility</th>
+          </tr>
+          <tr>
+            <td>${name}</td>
+            <td>${email}</td>
+            <td>${address}</td>
+            <td>${country}</td>
+            <td>${gender.value}</td>
+            <td>${ageNum}</td>
+            <td>${eligibility}</td>
+          </tr>
+        </table>
+      `;
+
+      document.getElementById("result").innerHTML = tableHTML;
+    }
+  </script>
+</head>
+<body>
+
+  <h1>Getting input from HTML Elements</h1>
+
+  <form onsubmit="handleSubmit(event)">
+    <table border="1" cellpadding="8">
+      <tr>
+        <td><label for="name">Enter Name</label></td>
+        <td><input type="text" id="name" name="name"></td>
+      </tr>
+
+      <tr>
+        <td><label for="email">Enter Mail ID</label></td>
+        <td><input type="email" id="email" name="email"></td>
+      </tr>
+
+      <tr>
+        <td><label for="address">Address</label></td>
+        <td><textarea id="address" name="address"></textarea></td>
+      </tr>
+
+      <tr>
+        <td><label for="country">Select Your Country</label></td>
+        <td>
+          <select id="country" name="country">
+            <option value="">--Select--</option>
+            <option value="India">India</option>
+            <option value="China">China</option>
+            <option value="Japan">Japan</option>
+          </select>
+        </td>
+      </tr>
+
+      <tr>
+        <td><label>Select Gender</label></td>
+        <td>
+          <input type="radio" name="gender" value="Male"> Male
+          <input type="radio" name="gender" value="Female"> Female
+          <input type="radio" name="gender" value="Other"> Other
+        </td>
+      </tr>
+
+      <tr>
+        <td><label for="age">Enter Age</label></td>
+        <td><input type="number" id="age" name="age"></td>
+      </tr>
+
+      <tr>
+        <td colspan="2" style="text-align:center;">
+          <button type="submit">Submit</button>
+        </td>
+      </tr>
+    </table>
+  </form>
+
+  <div id="result" style="margin-top:20px;"></div>
+
+</body>
+</html>
