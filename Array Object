@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Array Object Example</title>
+</head>
+<body>
+  <h2>Array Object Properties and Methods</h2>
+  <p id="output"></p>
+
+  <script>
+    // Create an array
+    let fruits = ["Apple", "Mango", "Banana", "Orange"];
+
+    // Display original array
+    let result = "Original Array: " + fruits + "<br>";
+
+    // Use length property
+    result += "Number of Fruits: " + fruits.length + "<br>";
+
+    // Add new fruit using push()
+    fruits.push("Grapes");
+    result += "After push(): " + fruits + "<br>";
+
+    // Remove last fruit using pop()
+    fruits.pop();
+    result += "After pop(): " + fruits + "<br>";
+
+    // Sort the array
+    fruits.sort();
+    result += "After sort(): " + fruits + "<br>";
+
+    // Display all results
+    document.getElementById("output").innerHTML = result;
+  </script>
+</body>
+</html>
