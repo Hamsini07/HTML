@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Color References in CSS</title>
+  <style>
+    h2 {
+      text-align: center;
+      color: navy;
+    }
+
+    /* 1. Named Color */
+    .named-color {
+      color: red;
+    }
+
+    /* 2. Hexadecimal Color */
+    .hex-color {
+      color: #008000; /* Green */
+    }
+
+    /* 3. RGB Color */
+    .rgb-color {
+      color: rgb(0, 0, 255); /* Blue */
+    }
+
+    /* 4. RGBA Color */
+    .rgba-color {
+      color: rgba(255, 165, 0, 0.8); /* Orange with transparency */
+    }
+
+    /* 5. HSL Color */
+    .hsl-color {
+      color: hsl(300, 100%, 25%); /* Purple */
+    }
+
+    /* 6. HSLA Color */
+    .hsla-color {
+      color: hsla(180, 100%, 25%, 0.7); /* Teal with transparency */
+    }
+  </style>
+</head>
+<body>
+  <h2>Different Ways to Reference Colors in CSS</h2>
+
+  <p class="named-color">This text uses a Named Color (red).</p>
+  <p class="hex-color">This text uses a Hexadecimal Color (#008000).</p>
+  <p class="rgb-color">This text uses an RGB Color (rgb(0, 0, 255)).</p>
+  <p class="rgba-color">This text uses an RGBA Color (rgba(255, 165, 0, 0.8)).</p>
+  <p class="hsl-color">This text uses an HSL Color (hsl(300, 100%, 25%)).</p>
+  <p class="hsla-color">This text uses an HSLA Color (hsla(180, 100%, 25%, 0.7)).</p>
+</body>
+</html>
