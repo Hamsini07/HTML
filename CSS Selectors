@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Selector Example</title>
+    <style>
+        /* Simple selectors */
+        p { color: blue; } /* element selector */
+        #heading { color: green; } /* id selector */
+        .highlight { background-color: yellow; } /* class selector */
+        h1, h2 { font-family: Arial, sans-serif; } /* group selector */
+        * { font-size: 16px; } /* universal selector */
+
+        /* Combinator selectors */
+        div p { color: red; } /* descendant selector */
+        div > p { font-weight: bold; } /* child selector */
+        h2 + p { font-style: italic; } /* adjacent sibling selector */
+        h2 ~ p { text-decoration: underline; } /* general sibling selector */
+
+        /* Attribute selector */
+        input[type="text"] { border: 2px solid black; }
+        input[placeholder] { padding: 5px; }
+    </style>
+</head>
+<body>
+    <h1 id="heading">CSS Selector Demo</h1>
+    <h2>Simple Selectors</h2>
+    <p class="highlight">This is a paragraph with class 'highlight'.</p>
+
+    <div>
+        <p>This paragraph is inside a div (descendant and child selectors).</p>
+    </div>
+    <h2>Combinator Selectors</h2>
+    <p>Adjacent sibling paragraph (italic).</p>
+    <p>General sibling paragraph (underlined).</p>
+    <h2>Attribute Selector</h2>
+    <input type="text" placeholder="Enter your name">
+</body>
+</html>
+
