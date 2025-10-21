@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Background Image Example</title>
+    <style>
+        body {
+            height: 2000px; /* to allow scrolling */
+            margin: 0;
+            background-image: url('https://via.placeholder.com/400'); /* replace with your image URL */
+            background-repeat: no-repeat;
+            background-position: center 50%; /* halfway down the page */
+            background-attachment: fixed; /* image remains in place during scroll */
+            transform: rotateX(10deg); /* tilt image horizontally */
+        }
+    </style>
+</head>
+<body>
+    <h2>Scroll down to see the fixed background image</h2>
+    <p>Content goes here...</p>
+</body>
+</html>
