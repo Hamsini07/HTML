@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Factorial and Fibonacci</title>
+    <script>
+        // Function to calculate factorial
+        function factorial() {
+            let num = parseInt(document.getElementById("number").value);
+            if (num < 0) {
+                alert("Enter a non-negative number");
+                return;
+            }
+            let fact = 1;
+            for (let i = 1; i <= num; i++) {
+                fact *= i;
+            }
+            alert("Factorial of " + num + " is: " + fact);
+        }
+
+        // Function to display Fibonacci series
+        function fibonacci() {
+            let num = parseInt(document.getElementById("number").value);
+            if (num <= 0) {
+                alert("Enter a positive number");
+                return;
+            }
+            let fib = [0, 1];
+            for (let i = 2; i < num; i++) {
+                fib[i] = fib[i - 1] + fib[i - 2];
+            }
+            alert("Fibonacci series up to " + num + " terms: " + fib.slice(0, num).join(", "));
+        }
+    </script>
+</head>
+<body>
+    <h2>Factorial and Fibonacci Calculator</h2>
+    <label>Enter a number: </label>
+    <input type="number" id="number" min="0">
+    <br><br>
+    <button onclick="factorial()">Factorial</button>
+    <button onclick="fibonacci()">Fibonacci</button>
+</body>
+</html>
+
