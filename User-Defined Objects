@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User-Defined Object Example</title>
+    <script>
+        // Constructor function
+        function Person(name, age) {
+            this.name = name; // property
+            this._age = age;  // property with underscore for accessor
+
+            // Method to display info
+            this.displayInfo = function() {
+                alert("Name: " + this.name + "\nAge: " + this._age);
+            };
+
+            // Accessor for age
+            Object.defineProperty(this, "age", {
+                get: function() {
+                    return this._age;
+                },
+                set: function(value) {
+                    if (value > 0) this._age = value;
+                    else alert("Invalid age!");
+                }
+            });
+        }
+
+        // Create an object
+        let person1 = new Person("Hamsini", 20);
+
+        function showPerson() {
+            person1.displayInfo();
+        }
+    </script>
+</head>
+<body>
+    <h2>User-Defined Object Example</h2>
+    <button onclick="showPerson()">Show Person Info</button>
+</body>
+</html>
