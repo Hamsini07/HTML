@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Date Object Example</title>
+    <script>
+        function showDateDetails() {
+            // Create a new Date object
+            let today = new Date();
+
+            // Get various properties
+            let year = today.getFullYear();
+            let month = today.getMonth() + 1; // Months are 0-based
+            let date = today.getDate();
+            let day = today.getDay(); // 0 = Sunday, 1 = Monday, ...
+            let hours = today.getHours();
+            let minutes = today.getMinutes();
+            let seconds = today.getSeconds();
+
+            // Array for day names
+            let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+            // Display the date and time details
+            alert(
+                "Today is: " + days[day] + "\n" +
+                "Date: " + date + "/" + month + "/" + year + "\n" +
+                "Time: " + hours + ":" + minutes + ":" + seconds
+            );
+        }
+    </script>
+</head>
+<body>
+    <h2>Date Object Example</h2>
+    <button onclick="showDateDetails()">Show Date & Time</button>
+</body>
+</html>
